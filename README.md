@@ -129,6 +129,10 @@ make install    # quits a running Deckle, builds, replaces /Applications/Deckle.
 
 Or `make run` to build and launch it from `dist/` without installing. Local builds are ad-hoc signed. Look for the italic serif **d** in your menu bar: bold while the paper is showing, faded while it is off, snoozed, or being compared.
 
+## Language
+
+Open Controls and settings → Settings → Language to choose English or 简体中文. The change applies immediately and is remembered after relaunch. Built-in paper names and descriptions are translated for display, while saved paper IDs and custom paper names stay stable.
+
 ## How it works
 
 - Deckle owns one borderless, transparent, nonactivating `NSPanel` per display at `.screenSaver` level. After ordering a panel on screen, Deckle attaches it to a separate compositor space so the texture can stay at display coordinates while full-screen desktops slide underneath. This uses dynamically resolved SkyLight functions. If they are unavailable, the panel uses AppKit’s all-Spaces and Stage Manager behavior. Each panel ignores mouse events and remains visible while Deckle is inactive. It stays out of the window cycle and tiles one small paper image through Core Animation, so memory does not grow with display resolution.
